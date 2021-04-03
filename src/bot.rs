@@ -1,14 +1,14 @@
 use serenity::framework::standard::{
-    help_commands, macros::help, Args, CommandGroup, CommandResult, HelpOptions, StandardFramework,
+    help_commands, macros::{help, command, group}, Args, CommandGroup, CommandResult, HelpOptions, StandardFramework, Client
 };
 pub struct Bot;
 
 impl Bot{
-    pub fn run(token: &str) -> Result<!>{
+    pub fn run(token: &str) -> serenity::Result<()>{
         // Create the standard framework
         let framework = StandardFramework::new()
             .configure(|c| {
-                c.prefix("{{bot_prefix}}").case_insensitivity(true);
+                c.prefix("{{bot_prefix}}").case_insensitivity(true)
             })
             // Add each command group here using .group([GROUP NAME IN CAPS])
             {% if include_examples %}
@@ -35,9 +35,7 @@ async fn help(
     let _ = help_commands::with_embeds(context, msg, args, help_options, groups, owners).await;
     Ok(())
 }
-
 {% if include_examples %}
-
 // This is an example group. You should put actual groups into their own seperate files
 #[group]
 #[commands(pong)]
@@ -45,8 +43,10 @@ struct Pong;
 
 #[command("ping")]
 async fn pong(ctx: &Context, msg: &Message) -> CommandResult{
-    msg.channel_id.broadcast_typeing(ctx).await?;
+    msg.channel_id.broadcast_typing(ctx).await?;
     msg.reply(ctx, "Pong!");
+
+    Ok(())
 }
 
 {% endif %}

@@ -7,3 +7,8 @@ default = "BOT_TOKEN"
 type = "string"
 prompt = "What prefix should activate the bot? (e.x. '!', '`')"
 default = "!"
+
+[placeholders.include_examples]
+type = "bool"
+prompt = "Do you want to include example code? (This is recommended for beginners)"
+default = true

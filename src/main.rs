@@ -1,4 +1,3 @@
-use std::io::Read;
 use bot::Bot;
 
 mod bot;
@@ -9,7 +8,7 @@ fn err_msg(message: &str) {
 }
 
 #[tokio::main]
-fn main() {
+async fn main() {
     // We also want to option to store the token in a `.env` file
     dotenv::dotenv().ok();
 

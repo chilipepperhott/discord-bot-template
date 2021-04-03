@@ -1,10 +1,15 @@
-use serenity::framework::standard::{
-    help_commands, macros::{help, command, group}, Args, CommandGroup, CommandResult, HelpOptions, StandardFramework, Client
-};
+use serenity::{
+    Client, 
+    client::Context,
+    model::prelude::{Message, UserId},
+    framework::standard::{
+        help_commands, macros::{help, command, group}, Args, CommandGroup, CommandResult, HelpOptions, StandardFramework
+    };};
+
 pub struct Bot;
 
 impl Bot{
-    pub fn run(token: &str) -> serenity::Result<()>{
+    pub async fn run(token: &str) -> serenity::Result<()>{
         // Create the standard framework
         let framework = StandardFramework::new()
             .configure(|c| {

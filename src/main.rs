@@ -24,7 +24,7 @@ async fn main() {
     }
 
     // Run the bot. If it errors out, let the user know.
-    if let Err(err) = Bot::run(token).await{
+    if let Err(err) = Bot::run(token.as_str()).await{
         err_msg("The bot encountered a catastrophic error. Please contact the bot creator if this happens frequently");
         return;
     }

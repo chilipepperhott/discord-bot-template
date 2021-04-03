@@ -51,7 +51,7 @@ struct Pong;
 #[command("ping")]
 async fn pong(ctx: &Context, msg: &Message) -> CommandResult{
     msg.channel_id.broadcast_typing(ctx).await?;
-    msg.reply(ctx, "Pong!");
+    msg.reply(ctx, "Pong!").await?;
 
     Ok(())
 }

@@ -1,4 +1,3 @@
-use std::collections::HashSet;
 use serenity::{
     Client, 
     client::Context,
@@ -7,6 +6,7 @@ use serenity::{
         help_commands, macros::{help, command, group}, Args, CommandGroup, CommandResult, HelpOptions, StandardFramework
     }
 };
+use std::collections::HashSet;
 
 pub struct Bot;
 

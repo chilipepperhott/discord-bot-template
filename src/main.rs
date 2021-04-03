@@ -1,5 +1,5 @@
-use std::env;
 use bot::Bot;
+use std::env;
 
 mod bot;
 

@@ -1,10 +1,12 @@
+use std::collections::HashSet;
 use serenity::{
     Client, 
     client::Context,
     model::prelude::{Message, UserId},
     framework::standard::{
         help_commands, macros::{help, command, group}, Args, CommandGroup, CommandResult, HelpOptions, StandardFramework
-    };};
+    }
+};
 
 pub struct Bot;
 
@@ -17,7 +19,7 @@ impl Bot{
             })
             // Add each command group here using .group([GROUP NAME IN CAPS])
             {% if include_examples %}
-            .group(&PONG)
+            .group(&PONG_GROUP)
             {% endif %}
             .help(&HELP);
 
@@ -53,5 +55,4 @@ async fn pong(ctx: &Context, msg: &Message) -> CommandResult{
 
     Ok(())
 }
-
 {% endif %}

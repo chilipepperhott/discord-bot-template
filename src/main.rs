@@ -1,3 +1,4 @@
+use std::env;
 use bot::Bot;
 
 mod bot;

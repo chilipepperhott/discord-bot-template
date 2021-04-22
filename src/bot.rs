@@ -43,7 +43,7 @@ async fn help(
     Ok(())
 }
 {% if include_examples %}
-// This is an example group. You should put actual groups into their own seperate files
+// This is an example group. You should put actual groups into their own separate files
 #[group]
 #[commands(pong)]
 struct Pong;

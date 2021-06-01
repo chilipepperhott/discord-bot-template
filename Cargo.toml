@@ -8,5 +8,5 @@ edition = "2018"
 
 [dependencies]
 dotenv = "0.15.0"
-serenity = "0.10.4"
+serenity = "0.10.7"
 tokio = {version = "1.4.0", features = ["full"]}
